@@ -1,0 +1,53 @@
+.route-camera-background,
+.route-camera-board {
+  transform-origin: left top;
+  transition: transform 300ms cubic-bezier(.2, .65, .3, 1);
+}
+
+#page-empty,
+#page-plan {
+  overflow: hidden;
+}
+
+#war-tip-layer.is-camera-tip .war-tip-panel {
+  left: 1792px !important;
+  top: 47.5px !important;
+}
+
+#war-result-board .war-result-node {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.is-camera-focused > .war-node-visual > .war-node-focus-ring {
+  display: block;
+}
+
+.war-node.is-camera-focused .war-icon,
+.war-result-node.is-camera-focused .war-icon {
+  opacity: .72;
+}
+
+.war-node.is-camera-focused.is-lit .war-icon,
+.war-result-node.is-camera-focused.is-lit .war-icon {
+  opacity: 1;
+}
+
+.has-route-camera > div:first-child > div {
+  z-index: 100;
+}
+
+#page-plan.has-route-camera > div:first-child > img[src="assets/CodeBuddyAssets/8652_568496/1.png"],
+#page-plan.has-route-camera > div:first-child > img[src="assets/CodeBuddyAssets/8652_568497/1.png"],
+#page-plan.has-route-camera > div:first-child > img[src="assets/CodeBuddyAssets/8691_543566/1.png"],
+#page-plan.has-route-camera > div:first-child > div[style*="width: 223px"][style*="height: 64px"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-camera-background,
+  .route-camera-board {
+    transition-duration: 0ms;
+  }
+}

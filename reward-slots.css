@@ -1,0 +1,38 @@
+#page-plan .war-reward-area {
+  left: 32px !important;
+}
+
+#page-empty .war-reward-area {
+  left: 320px !important;
+}
+
+#page-empty:not(.has-generated) .war-reward-area,
+.war-reward-area .war-reward-old-list {
+  display: none !important;
+}
+
+.war-reward-area .war-reward-slots {
+  position: absolute;
+  left: 0;
+  top: 52px;
+  width: 1032px;
+  height: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 16px;
+  pointer-events: none;
+}
+
+.war-reward-area .war-reward-slot {
+  flex: 0 0 160px;
+  width: 160px;
+  height: 160px;
+}
+
+.war-reward-area .war-reward-slot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
