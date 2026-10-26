@@ -1,3 +1,34 @@
+.war-difficulty-menu {
+  width: 140px !important;
+  height: 920px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 100;
+}
+
+.war-difficulty-tab {
+  box-sizing: border-box;
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #D9F3FF;
+  font: 650 36px/1 NZFuture-Body-SB, Microsoft YaHei, sans-serif;
+  cursor: pointer;
+}
+
+.war-difficulty-tab:hover {
+  box-shadow: inset 0 0 0 2px rgba(217, 243, 255, .4);
+}
+
+.war-difficulty-tab:focus-visible {
+  outline: 2px solid #D9F3FF;
+  outline-offset: 4px;
+}
+
 .war-node,
 .war-result-node {
   overflow: visible;
@@ -95,7 +126,8 @@
   }
 }
 
-.war-tip-selection-hint {
+.war-tip-selection-hint,
+.war-tip-generated-hint {
   display: none;
   position: absolute;
   left: 26px;
@@ -116,6 +148,11 @@
   width: 44px;
   height: 44px;
   object-fit: contain;
+}
+
+#war-tip-layer.is-readonly .war-tip-generated-hint,
+#war-tip-layer.is-locked .war-tip-generated-hint {
+  display: flex;
 }
 
 #war-tip-layer.is-selection-blocked:not(.is-locked):not(.is-readonly) .war-tip-selection-hint {

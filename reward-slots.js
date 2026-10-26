@@ -1,7 +1,7 @@
 (function () {
   var lists = {};
   var lastStates = {};
-  var columnsByDifficulty = { '英雄': [1, 3], '炼狱': [1, 2, 3], '折磨': [0, 1, 2, 3, 4] };
+  var columnsByDifficulty = window.warDifficultyConfig.columns;
 
   function setup(pageId) {
     if (lists[pageId] && lists[pageId].isConnected) return lists[pageId];
@@ -75,7 +75,7 @@
   }
 
   function sync() {
-    var difficulty = window.getWarDifficulty ? window.getWarDifficulty() : '折磨';
+    var difficulty = window.getWarDifficulty ? window.getWarDifficulty() : '普通';
     var editorData = window.getWarPlanSnapshot ? window.getWarPlanSnapshot() : null;
     renderSlots('page-plan', editorData, editorData && editorData.difficulty || difficulty);
     var savedData = window.getStoredWarPlan ? window.getStoredWarPlan(difficulty) : null;

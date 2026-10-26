@@ -149,23 +149,26 @@
     page.appendChild(intro);
   }
 
-  function editorCenter(column, row) {
-    return { x: 110 + column * 320, y: 130 + row * 220 + (column === 4 && row === 0 ? 80 : 0) };
+  function editorCenter(column, row, offset) {
+    return { x: 110 + column * 320 + offset, y: 130 + row * 220 + (column === 4 && row === 0 ? 80 : 0) };
   }
 
   function layoutBoard(board) {
     if (!board) return;
+    var data = board.id === 'war-plan-board' && window.getWarPlanSnapshot ? window.getWarPlanSnapshot() : null;
+    var difficulty = data ? data.difficulty : window.getWarDifficulty();
+    var offset = difficulty === '英雄' ? 160 : 0;
     board.style.left = '512px';
     board.style.top = '58px';
     board.querySelectorAll('.war-node, .war-result-node').forEach(function (node) {
-      var center = editorCenter(+node.dataset.col, +node.dataset.row);
+      var center = editorCenter(+node.dataset.col, +node.dataset.row, offset);
       node.style.left = (center.x - 107.1) + 'px';
       node.style.top = (center.y - 50.4) + 'px';
     });
     board.querySelectorAll('.war-edge, .war-result-edge').forEach(function (edge) {
       var key = edge.dataset.key.split('-').map(Number);
-      var start = editorCenter(key[0], key[2]);
-      var end = editorCenter(key[1], key[3]);
+      var start = editorCenter(key[0], key[2], offset);
+      var end = editorCenter(key[1], key[3], offset);
       var dx = end.x - start.x;
       var dy = end.y - start.y;
       edge.style.left = start.x + 'px';
