@@ -150,7 +150,7 @@
   }
 
   function editorCenter(column, row, offset) {
-    return { x: 110 + column * 320 + offset, y: 130 + row * 220 + (column === 4 && row === 0 ? 80 : 0) };
+    return { x: 110 + column * 320 + offset, y: 130 + row * 200 + (column === 4 && row === 0 ? 80 : 0) };
   }
 
   function layoutBoard(board) {
@@ -159,7 +159,7 @@
     var difficulty = data ? data.difficulty : window.getWarDifficulty();
     var offset = difficulty === '英雄' ? 160 : 0;
     board.style.left = '512px';
-    board.style.top = '58px';
+    board.style.top = '138px';
     board.querySelectorAll('.war-node, .war-result-node').forEach(function (node) {
       var center = editorCenter(+node.dataset.col, +node.dataset.row, offset);
       node.style.left = (center.x - 107.1) + 'px';
