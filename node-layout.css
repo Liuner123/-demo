@@ -203,7 +203,12 @@
   z-index: 2;
 }
 
-#page-empty.has-generated .war-result-node:not(.is-lit) > .war-node-visual > .war-node-reward {
+#page-empty.has-generated .war-result-node:not(.is-lit) > .war-node-visual > .war-node-reward,
+#page-plan.is-generated-edit .war-node:not(.is-lit) > .war-node-visual > .war-node-reward {
+  display: none;
+}
+
+#page-plan.is-generated-edit .war-edge:not(.is-active) {
   display: none;
 }
 
